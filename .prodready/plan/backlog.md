@@ -3,7 +3,7 @@
 ## Sprint 1: Foundation
 
 ### TASK-001: Project Scaffolding
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Initialize Next.js 15 project with App Router, TypeScript strict mode, ESLint, Prettier, Husky + lint-staged, and canonical folder structure.
@@ -22,7 +22,7 @@ Initialize Next.js 15 project with App Router, TypeScript strict mode, ESLint, P
 ---
 
 ### TASK-002: Docker & Infrastructure Setup
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Create Docker configuration for development (hot-reload) and production (multi-stage build). Include Caddy reverse proxy config for production.
@@ -41,7 +41,7 @@ Create Docker configuration for development (hot-reload) and production (multi-s
 ---
 
 ### TASK-003: Database Schema & Prisma Setup
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Configure Prisma 7 with PostgreSQL, apply schema from `.prodready/define/data-model/schema.prisma`, create initial migration, and seed superadmin from env vars.
@@ -61,7 +61,7 @@ Configure Prisma 7 with PostgreSQL, apply schema from `.prodready/define/data-mo
 ---
 
 ### TASK-004: iron-session Config & Auth Middleware
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Configure iron-session with typed session data and implement Next.js middleware that redirects unauthenticated requests to `/login`.
@@ -81,7 +81,7 @@ Configure iron-session with typed session data and implement Next.js middleware 
 ## Sprint 2: Auth & Members
 
 ### TASK-005: Auth API Endpoints
-**Priority**: P0 | **Estimate**: 3h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 3h | **Status**: Done
 
 **Description**:
 Implement `POST /api/auth/login`, `POST /api/auth/logout`, and `GET /api/auth/me` Route Handlers using iron-session and bcryptjs.
@@ -99,7 +99,7 @@ Implement `POST /api/auth/login`, `POST /api/auth/logout`, and `GET /api/auth/me
 ---
 
 ### TASK-006: Login Page UI
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Create the `/login` Server Component page with a Client Component form that calls POST /api/auth/login and redirects on success.
@@ -117,7 +117,7 @@ Create the `/login` Server Component page with a Client Component form that call
 ---
 
 ### TASK-007: Members API Endpoints
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Implement `GET /api/members`, `POST /api/members`, and `DELETE /api/members/{id}` Route Handlers. POST and DELETE require ADMIN role.
@@ -134,7 +134,7 @@ Implement `GET /api/members`, `POST /api/members`, and `DELETE /api/members/{id}
 ---
 
 ### TASK-008: Members Management UI
-**Priority**: P1 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P1 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Create a members management panel (admin-only) accessible from the board page. Allows adding and removing team members.
@@ -154,7 +154,7 @@ Create a members management panel (admin-only) accessible from the board page. A
 ## Sprint 3: Tasks
 
 ### TASK-009: Tasks Service Layer
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Implement a Prisma-backed service module for tasks: CRUD operations plus order management logic for status columns.
@@ -172,7 +172,7 @@ Implement a Prisma-backed service module for tasks: CRUD operations plus order m
 ---
 
 ### TASK-010: Tasks CRUD API Endpoints
-**Priority**: P0 | **Estimate**: 3h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 3h | **Status**: Done
 
 **Description**:
 Implement task CRUD Route Handlers: `GET /api/tasks`, `POST /api/tasks`, `GET /api/tasks/{id}`, `PATCH /api/tasks/{id}`, `DELETE /api/tasks/{id}`.
@@ -192,7 +192,7 @@ Implement task CRUD Route Handlers: `GET /api/tasks`, `POST /api/tasks`, `GET /a
 ---
 
 ### TASK-011: Tasks Move API Endpoint
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Implement `PATCH /api/tasks/{id}/move` for drag-and-drop status and order changes.
@@ -209,7 +209,7 @@ Implement `PATCH /api/tasks/{id}/move` for drag-and-drop status and order change
 ---
 
 ### TASK-012: Board Page — Server Component
-**Priority**: P0 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Create the `/` board page as a Server Component that fetches tasks and members server-side, rendering the full Kanban layout with no loading spinner on initial load.
@@ -227,7 +227,7 @@ Create the `/` board page as a Server Component that fetches tasks and members s
 ---
 
 ### TASK-013: KanbanBoard Client Component (dnd-kit)
-**Priority**: P0 | **Estimate**: 4h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 4h | **Status**: Done
 
 **Description**:
 Implement the interactive Kanban board with dnd-kit drag & drop, optimistic UI updates, and rollback on network failure.
@@ -246,7 +246,7 @@ Implement the interactive Kanban board with dnd-kit drag & drop, optimistic UI u
 ---
 
 ### TASK-014: Task Modal — Create & Edit
-**Priority**: P0 | **Estimate**: 3h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 3h | **Status**: Done
 
 **Description**:
 Create the Task Modal Client Component for creating new tasks and editing existing ones, triggered from the board.
@@ -266,7 +266,7 @@ Create the Task Modal Client Component for creating new tasks and editing existi
 ---
 
 ### TASK-015: Task Delete Confirmation
-**Priority**: P0 | **Estimate**: 1h | **Status**: Ready
+**Priority**: P0 | **Estimate**: 1h | **Status**: Done
 
 **Description**:
 Add a delete action on task cards with a confirmation step before calling DELETE /api/tasks/{id}.
