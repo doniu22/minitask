@@ -1,4 +1,4 @@
-import { getIronSession, IronSession } from 'iron-session'
+import { getIronSession, IronSession, SessionOptions } from 'iron-session'
 import { cookies } from 'next/headers'
 
 export type SessionData = {
@@ -8,14 +8,21 @@ export type SessionData = {
   name: string
 }
 
-const sessionOptions = {
-  password: process.env.SESSION_SECRET!,
+export const sessionOptions: SessionOptions = {
+  password: process.env.SESSION_SECRET ?? 'placeholder-replaced-at-runtime-32chars',
   cookieName: 'minitask_session',
   cookieOptions: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     sameSite: 'lax' as const,
   },
+}
+
+export function getSessionOptions(): SessionOptions {
+  return {
+    ...sessionOptions,
+    password: process.env.SESSION_SECRET!,
+  }
 }
 
 export function validateSessionSecret(): void {
@@ -25,7 +32,8 @@ export function validateSessionSecret(): void {
   }
 }
 
+/** For Server Components only (requires Next.js request context) */
 export async function getSession(): Promise<IronSession<SessionData>> {
   const cookieStore = await cookies()
-  return getIronSession<SessionData>(cookieStore, sessionOptions)
+  return getIronSession<SessionData>(cookieStore, getSessionOptions())
 }
