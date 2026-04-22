@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Dependencies
+node_modules
+
+# Build output
+.next
+dist
+build
+
+# Environment (never bake secrets into image)
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Testing
+coverage
+.nyc_output
+tests/e2e/results
+playwright-report
+
+# Misc
+.DS_Store
+*.log
+
+# ProdReady artifacts
+.prodready
+.claude

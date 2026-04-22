@@ -1,0 +1,1 @@
+MiniTask - minimalistyczny task tracker - takie uproszczone Trello.

@@ -1,0 +1,76 @@
+flowchart TD
+    subgraph Sprint1[Sprint 1: Foundation]
+        T001[TASK-001: Project Scaffolding]
+        T002[TASK-002: Docker & Infrastructure]
+        T003[TASK-003: Database & Prisma]
+        T004[TASK-004: iron-session & Middleware]
+    end
+
+    subgraph Sprint2[Sprint 2: Auth & Members]
+        T005[TASK-005: Auth API]
+        T006[TASK-006: Login Page UI]
+        T007[TASK-007: Members API]
+        T008[TASK-008: Members UI]
+    end
+
+    subgraph Sprint3[Sprint 3: Tasks]
+        T009[TASK-009: Tasks Service Layer]
+        T010[TASK-010: Tasks CRUD API]
+        T011[TASK-011: Tasks Move API]
+        T012[TASK-012: Board Page SSR]
+        T013[TASK-013: KanbanBoard + dnd-kit]
+        T014[TASK-014: Task Modal Create/Edit]
+        T015[TASK-015: Task Delete Confirmation]
+    end
+
+    subgraph Sprint4[Sprint 4: Polish]
+        T016[TASK-016: Zod Schemas]
+        T017[TASK-017: Error Handling & Toasts]
+        T018[TASK-018: GitHub Actions CI]
+    end
+
+    T001 --> T002
+    T001 --> T003
+    T003 --> T004
+    T004 --> T005
+    T005 --> T006
+    T003 --> T007
+    T005 --> T007
+    T007 --> T008
+    T003 --> T009
+    T005 --> T010
+    T009 --> T010
+    T007 --> T010
+    T010 --> T011
+    T009 --> T011
+    T010 --> T012
+    T011 --> T013
+    T012 --> T013
+    T010 --> T014
+    T012 --> T014
+    T014 --> T015
+    T010 --> T016
+    T007 --> T016
+    T005 --> T016
+    T010 --> T017
+    T013 --> T017
+    T010 --> T018
+
+    style T001 fill:#10B981,color:#fff
+    style T002 fill:#10B981,color:#fff
+    style T003 fill:#10B981,color:#fff
+    style T004 fill:#10B981,color:#fff
+    style T005 fill:#3B82F6,color:#fff
+    style T006 fill:#3B82F6,color:#fff
+    style T007 fill:#3B82F6,color:#fff
+    style T008 fill:#3B82F6,color:#fff
+    style T009 fill:#8B5CF6,color:#fff
+    style T010 fill:#8B5CF6,color:#fff
+    style T011 fill:#8B5CF6,color:#fff
+    style T012 fill:#8B5CF6,color:#fff
+    style T013 fill:#8B5CF6,color:#fff
+    style T014 fill:#8B5CF6,color:#fff
+    style T015 fill:#8B5CF6,color:#fff
+    style T016 fill:#F59E0B,color:#fff
+    style T017 fill:#F59E0B,color:#fff
+    style T018 fill:#F59E0B,color:#fff
