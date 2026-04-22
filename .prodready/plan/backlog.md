@@ -286,7 +286,7 @@ Add a delete action on task cards with a confirmation step before calling DELETE
 ## Sprint 4: Polish
 
 ### TASK-016: Zod Schemas & Shared Validation
-**Priority**: P1 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P1 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Extract all API input Zod schemas into `src/lib/schemas/` and reuse them in both API Route Handlers (server) and React forms (client-side validation).
@@ -305,7 +305,7 @@ Extract all API input Zod schemas into `src/lib/schemas/` and reuse them in both
 ---
 
 ### TASK-017: Global Error Handling & Toast Notifications
-**Priority**: P1 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P1 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Implement unified API error response format, React Error Boundary for the board, and a toast notification system for user-facing errors and successes.
@@ -322,7 +322,7 @@ Implement unified API error response format, React Error Boundary for the board,
 ---
 
 ### TASK-018: GitHub Actions CI
-**Priority**: P1 | **Estimate**: 2h | **Status**: Ready
+**Priority**: P1 | **Estimate**: 2h | **Status**: Done
 
 **Description**:
 Set up GitHub Actions workflow that runs on every push/PR: lint, typecheck, unit tests, and integration tests (with postgres service container).
