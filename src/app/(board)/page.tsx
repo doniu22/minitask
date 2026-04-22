@@ -4,6 +4,7 @@ import { listTasks } from '@/lib/tasks'
 import { prisma } from '@/lib/prisma'
 import { Role, TaskStatus } from '@prisma/client'
 import { KanbanBoard } from '@/components/board/KanbanBoard'
+import { BoardErrorBoundary } from '@/components/board/BoardErrorBoundary'
 import { MembersPanel } from '@/components/members/MembersPanel'
 import { LogoutButton } from '@/components/auth/LogoutButton'
 
@@ -40,7 +41,9 @@ export default async function BoardPage() {
 
       <main className="flex flex-1 gap-6 p-6">
         <div className="flex-1">
-          <KanbanBoard initialTasksByStatus={tasksByStatus} initialMembers={members} />
+          <BoardErrorBoundary>
+            <KanbanBoard initialTasksByStatus={tasksByStatus} initialMembers={members} />
+          </BoardErrorBoundary>
         </div>
         <aside className="w-72 shrink-0">
           <MembersPanel initialMembers={members} isAdmin={isAdmin} />
