@@ -1,1 +1,1 @@
-// Global test setup
+import 'dotenv/config'
