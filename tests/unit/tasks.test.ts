@@ -1,14 +1,19 @@
-import { describe, it, expect, beforeAll, afterEach } from 'vitest'
-import { TaskStatus, Role } from '@prisma/client'
-import { getTestPrisma, cleanDatabase } from '../helpers/db'
+import { describe, it, expect, beforeAll, afterAll, afterEach } from 'vitest'
+import { TaskStatus } from '@prisma/client'
+import { getTestPrisma } from '../helpers/db'
 import { createTask, moveTask, listTasks, TaskNotFoundError } from '@/lib/tasks'
 
 beforeAll(async () => {
   process.env.DATABASE_URL ??= 'postgresql://postgres:postgres@localhost:5432/minitask_dev'
+  await getTestPrisma().task.deleteMany()
 })
 
 afterEach(async () => {
-  await cleanDatabase()
+  await getTestPrisma().task.deleteMany()
+})
+
+afterAll(async () => {
+  await getTestPrisma().task.deleteMany()
 })
 
 describe('createTask', () => {

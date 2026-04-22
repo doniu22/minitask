@@ -9,6 +9,8 @@ export default defineConfig({
     environment: 'node',
     environmentMatchGlobs: [['tests/unit/components/**', 'jsdom']],
     setupFiles: ['./tests/setup.ts'],
+    fileParallelism: false,
+    pool: 'forks',
   },
   resolve: {
     alias: {

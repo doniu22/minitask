@@ -31,8 +31,9 @@ export function TaskModal({
   const isEdit = task !== null
 
   useEffect(() => {
-    dialogRef.current?.showModal()
-    return () => dialogRef.current?.close()
+    const dialog = dialogRef.current
+    dialog?.showModal()
+    return () => dialog?.close()
   }, [])
 
   function handleBackdropClick(e: React.MouseEvent<HTMLDialogElement>) {
