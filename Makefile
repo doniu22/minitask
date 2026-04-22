@@ -1,6 +1,7 @@
 .PHONY: dev dev-build dev-down test test-unit test-integration test-e2e test-coverage \
         lint lint-fix typecheck format \
         db-migrate db-reset db-seed db-studio \
+        build-prod prod-up prod-down prod-logs prod-migrate \
         clean help
 
 # ===========================================
@@ -75,6 +76,25 @@ db-seed: ## Seed database with initial data
 
 db-studio: ## Open Prisma Studio (database GUI) at localhost:5555
 	npx prisma studio
+
+# ===========================================
+# Production
+# ===========================================
+
+build-prod: ## Build production Docker image
+	docker build -t minitask:latest .
+
+prod-up: ## Start production environment
+	docker-compose -f docker-compose.prod.yml up -d
+
+prod-down: ## Stop production environment
+	docker-compose -f docker-compose.prod.yml down
+
+prod-logs: ## Tail production logs
+	docker-compose -f docker-compose.prod.yml logs -f
+
+prod-migrate: ## Run database migrations in production
+	docker-compose -f docker-compose.prod.yml exec app npx prisma migrate deploy
 
 # ===========================================
 # Cleanup
